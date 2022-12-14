@@ -12,7 +12,7 @@ headers = rows[0]
 star_data_rows = rows[1:]
 
 star_masses = []
-star_radius = []
+star_radii = []
 star_gravity = []
 star_names = []
 
@@ -22,7 +22,8 @@ for star_data in star_data_rows:
     else:
         star_names.append(star_data[1])
         star_masses.append(float(star_data[3]))
-        star_radius.append(float(star_data[4]))
+        star_radii.append(float(star_data[4]))
         star_gravity.append(float(star_data[5]))
-fig = px.scatter(x = star_masses, y = star_radius, size = star_gravity, range_y=(-2e+8,3e+9), range_x=(-1e+31,2.1e+32), labels=dict(x='Mass of Star', y='Radius of Star'))
+
+fig = px.scatter(x = star_masses, y = star_radii, size = star_gravity, range_y=(-2e+8,3e+9), range_x=(-1e+31,2.1e+32), labels=dict(x='Mass of Star', y='Radius of Star'))
 fig.show()
